@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiv Menglong | Graphic Designer</title>
+  <meta name="description" content="Portfolio of Chiv Menglong, graphic designer.">
+
+  <!-- Tab icon -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Link preview when shared on Telegram / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chiv Menglong | Graphic Designer">
+  <meta property="og:description" content="Posters, social media designs, photography and video by Chiv Menglong.">
+  <meta property="og:image" content="images/profile.jpg">
+
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+  <!-- Bootstrap 5 CSS + Bootstrap Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+
+  <!-- Your own styles (always load after Bootstrap) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Menglong<span class="text-accent">.</span></a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navMenu" aria-controls="navMenu"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item mt-2 mt-lg-0">
+            <a class="btn btn-accent btn-sm px-4" href="files/Chiv-Menglong-CV-Design.pdf" download="Chiv-Menglong-CV.pdf">
+              <i class="bi bi-download me-1"></i> CV
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-7 reveal">
+          <p class="eyebrow">Graphic Designer &middot; Photographer</p>
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-accent">Chiv Menglong</span>.
+            I design posters, social media and visual stories.
+          </h1>
+          <p class="lead text-muted-2 mb-4">
+            I turn ideas into clean, eye-catching designs with Photoshop, Canva and CapCut.
+          </p>
+          <div class="hero-buttons d-flex flex-wrap gap-3">
+            <a href="#work" class="btn btn-accent btn-lg">View My Work</a>
+            <a href="files/Chiv-Menglong-CV-Design.pdf" class="btn btn-outline-dark btn-lg" download="Chiv-Menglong-CV.pdf">
+              <i class="bi bi-file-earmark-arrow-down me-1"></i> Download CV
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 text-center reveal">
+          <div class="hero-photo">
+            <img src="images/profile.jpg" alt="Photo of Chiv Menglong">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== WORK / GALLERY ==================== -->
+  <section id="work" class="section">
+    <div class="container">
+      <div class="text-center mb-4 reveal">
+        <p class="eyebrow">Portfolio</p>
+        <h2 class="section-title">Selected Work</h2>
+      </div>
+
+      <!-- Filter buttons: data-filter must match a project's category in script.js -->
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="poster">Poster</button>
+        <button class="filter-btn" data-filter="social">Social Media</button>
+        <button class="filter-btn" data-filter="photo">Photography</button>
+        <button class="filter-btn" data-filter="video">Video</button>
+      </div>
+
+      <!-- The project cards are created by js/script.js -->
+      <div class="row g-4" id="gallery"></div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" class="section bg-soft">
+    <div class="container">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-5 reveal">
+          <img src="images/about.jpg" alt="Chiv Menglong at work"
+               class="img-fluid rounded-circle shadow-sm d-block mx-auto" style="max-width: 400px;">
+        </div>
+
+        <div class="col-lg-7 reveal">
+          <p class="eyebrow">About Me</p>
+          <h2 class="section-title mb-3">Creative, curious and detail-focused</h2>
+          <p class="text-muted-2">
+            I'm a creative student who loves turning ideas into visuals. I design posters,
+            social media content and short videos, and I also enjoy photography and photo
+            editing. I'm looking for a graphic design internship where I can learn from a
+            real team and keep growing my skills.
+          </p>
+
+          <h3 class="h6 fw-semibold mt-4 mb-3">Skills &amp; Tools</h3>
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <span class="skill"><i class="bi bi-palette"></i> Photoshop</span>
+            <span class="skill"><i class="bi bi-grid-1x2"></i> Canva</span>
+            <span class="skill"><i class="bi bi-camera-reels"></i> CapCut</span>
+            <span class="skill"><i class="bi bi-camera"></i> Photography</span>
+            <span class="skill"><i class="bi bi-sliders"></i> Photo Editing</span>
+            <span class="skill"><i class="bi bi-printer"></i> Printing</span>
+            <span class="skill"><i class="bi bi-file-earmark-text"></i> Word, Excel, PowerPoint</span>
+          </div>
+
+          <h3 class="h6 fw-semibold mb-2">Languages</h3>
+          <p class="text-muted-2 mb-4">English &middot; Khmer</p>
+
+          <a href="files/Chiv-Menglong-CV-Design.pdf" class="btn btn-accent" download="Chiv-Menglong-CV.pdf">
+            <i class="bi bi-download me-1"></i> Download My CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title">Let's work together</h2>
+        <p class="text-muted-2">I'm open to internships and freelance design work.</p>
+      </div>
+
+      <!-- Contact cards (Email, Telegram, Facebook) can be added back here
+           once you have your real links. -->
+      <div class="text-center reveal">
+        <a href="files/Chiv-Menglong-CV-Design.pdf" class="btn btn-accent btn-lg" download="Chiv-Menglong-CV.pdf">
+          <i class="bi bi-download me-1"></i> Download My CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between
+                align-items-center gap-3">
+      <p class="mb-0">&copy; <span id="year"></span> Chiv Menglong. All rights reserved.</p>
+      <!-- Social icons (Facebook, Instagram, Behance, Telegram) can be added back here. -->
+    </div>
+  </footer>
+
+  <!-- ==================== PROJECT POPUP (Bootstrap modal) ==================== -->
+  <div class="modal fade" id="projectModal" tabindex="-1"
+       aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 overflow-hidden">
+        <button type="button" class="btn-close modal-close"
+                data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-media" id="modalMedia"></div>
+        <div class="modal-body p-4">
+          <span class="badge-cat" id="modalCategory"></span>
+          <h3 class="h4 mt-2 mb-2" id="modalTitle"></h3>
+          <p class="text-muted-2 mb-2" id="modalDesc"></p>
+          <p class="small mb-0"><strong>Tools:</strong> <span id="modalTools"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to top button -->
+  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <!-- Bootstrap JS (needed for the mobile menu and the popup) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Your own JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>

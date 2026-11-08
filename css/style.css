@@ -1,0 +1,403 @@
+/* ==========================================================
+   Portfolio – Chiv Menglong
+   Custom styles. Bootstrap does the grid and components;
+   this file adds your own colors, spacing and effects.
+   ========================================================== */
+
+/* ---------- 1. COLORS & SETTINGS (change these to match your CV) ---------- */
+:root {
+  --accent: #0f766e;        /* main color: buttons, links, highlights (teal-green, same as CV) */
+  --accent-dark: #115e59;   /* button hover color */
+  --blue: #7dd3fc;          /* light blue from the CV */
+  --green: #86efac;         /* light green from the CV */
+  --grad: linear-gradient(135deg, #7dd3fc, #86efac);
+  --ink: #0b2a3c;           /* text and dark backgrounds (dark blue-teal) */
+  --muted: #55707d;         /* grey text */
+  --soft: #effaf6;          /* light mint section background */
+  --radius: 18px;           /* roundness of cards and photos */
+}
+
+/* ---------- 2. BASE ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;  /* so the fixed navbar doesn't cover headings */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--ink);
+  background: #fff;
+}
+
+h1, h2, h3 { font-weight: 700; }
+a { text-decoration: none; }
+
+.text-accent  { color: var(--accent); }
+.text-muted-2 { color: var(--muted); }
+.bg-soft      { background: var(--soft); }
+
+.section { padding: 100px 0; }
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+
+/* ---------- 3. BUTTONS ---------- */
+.btn {
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+/* ---------- 4. NAVBAR ---------- */
+#mainNav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 16px 0;
+  transition: padding 0.3s, box-shadow 0.3s;
+}
+
+#mainNav.scrolled {
+  padding: 10px 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+
+.nav-link {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.nav-link:hover { color: var(--accent); }
+
+.navbar-toggler:focus { box-shadow: none; }
+.navbar-toggler:focus-visible { box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.4); }
+
+/* ---------- 5. HERO ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+}
+
+.hero-title {
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.hero-photo {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;          /* keeps the coral square behind the photo */
+  margin: 0 20px 20px 0;
+}
+
+.hero-photo::before {          /* blue-green square behind the photo */
+  content: "";
+  position: absolute;
+  inset: 20px -20px -20px 20px;
+  background: var(--grad);
+  border-radius: 50%;          /* circle, same as the CV */
+  z-index: -1;
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid #fff;
+}
+
+/* ---------- 6. FILTER BUTTONS ---------- */
+.filter-btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  color: var(--ink);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.25s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+/* ---------- 7. GALLERY CARDS ---------- */
+.work-item { animation: fadeUp 0.5s ease both; }
+
+.work-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--soft);
+  cursor: pointer;
+}
+
+.work-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.work-card:hover img { transform: scale(1.06); }
+
+.work-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 24px;
+  text-align: left;
+  background: linear-gradient(transparent, rgba(11, 42, 60, 0.88));
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.35s;
+}
+
+.work-card:hover .work-overlay,
+.work-card:focus-visible .work-overlay {
+  opacity: 1;
+  transform: none;
+}
+
+.work-cat {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.work-title {
+  font-size: 1.15rem;
+  margin: 4px 0 0;
+  color: #fff;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--accent);
+  font-size: 2rem;
+}
+
+/* ---------- 8. PROJECT POPUP ---------- */
+.modal-media img {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  background: #111;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 1;
+}
+
+#modalTitle { font-weight: 600; }
+
+.badge-cat {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- 9. ABOUT – SKILLS ---------- */
+.skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid #d6ece6;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.skill i { color: var(--accent); }
+
+/* ---------- 10. CONTACT CARDS ---------- */
+.contact-card {
+  display: block;
+  height: 100%;
+  padding: 36px 24px;
+  text-align: center;
+  color: var(--ink);
+  background: var(--soft);
+  border-radius: var(--radius);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+  color: var(--ink);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card i {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.contact-card h3 {
+  font-size: 1.1rem;
+  margin: 12px 0 4px;
+}
+
+.contact-card span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+/* ---------- 11. FOOTER ---------- */
+.footer {
+  background: var(--ink);
+  color: #b9d3dc;
+  padding: 28px 0;
+  font-size: 0.9rem;
+}
+
+.social {
+  display: flex;
+  gap: 18px;
+}
+
+.social a {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.social a:hover { color: var(--green); }
+
+/* ---------- 12. BACK TO TOP BUTTON ---------- */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 1000;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+/* ---------- 13. ANIMATIONS ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- 14. RESPONSIVE (tablets and phones) ---------- */
+@media (max-width: 991.98px) {
+  .section { padding: 70px 0; }
+  .hero { min-height: auto; text-align: center; }
+  .hero-buttons { justify-content: center; }
+  #mainNav { background: #fff; }   /* solid menu on phones */
+  .navbar-collapse { padding: 12px 0; }
+}
+
+/* On touch screens there is no hover, so always show the card text */
+@media (hover: none) {
+  .work-overlay {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect users who turn off animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

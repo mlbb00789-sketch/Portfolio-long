@@ -1,0 +1,4 @@
+# Local files that should not be published with the website
+.mcp.json
+Portfolio-Website-Code.pdf
+.vscode/
